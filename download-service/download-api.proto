@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package download_api;
+
+// TODO: describe the API
+
+message DownloadRequest {
+  string url = 1;
+  string local_path = 2;
+}
+
+message DownloadResponse { int32 status = 1; }
+
+service Download {
+  rpc download_video(DownloadRequest) returns (DownloadResponse);
+}
